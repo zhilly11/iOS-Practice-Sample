@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ViewControllerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sky-2c-9bO">
+                                <rect key="frame" x="309" y="77" width="77" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="재고 수정"/>
+                                <connections>
+                                    <action selector="editButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Trz-yj-DLp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUr-zL-W5U">
+                                <rect key="frame" x="194.5" y="424" width="25" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oUr-zL-W5U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OfR-5u-ZeG"/>
+                            <constraint firstItem="oUr-zL-W5U" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QaU-SE-iSO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstStcokLabel" destination="oUr-zL-W5U" id="r9S-oY-chX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="98"/>
+        </scene>
+        <!--StockViewController-->
+        <scene sceneID="u3G-0j-BcD">
+            <objects>
+                <viewController storyboardIdentifier="StockViewController" title="StockViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e7l-mQ-Ss3" customClass="EditStockViewController" customModule="ViewControllerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7AV-NC-w7F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2SU-uF-v1F">
+                                <rect key="frame" x="160" y="522" width="94" height="32"/>
+                                <connections>
+                                    <action selector="touchUpStepper:" destination="e7l-mQ-Ss3" eventType="valueChanged" id="mHy-Rv-UpC"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HL-34-9sf">
+                                <rect key="frame" x="185.5" y="424" width="43" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVF-oP-7IH">
+                                <rect key="frame" x="302" y="68" width="79" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="닫기"/>
+                                <connections>
+                                    <action selector="touchUpDismissButton:" destination="e7l-mQ-Ss3" eventType="touchUpInside" id="Wp1-t3-Mx1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Mj-NH-Fqv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2HL-34-9sf" firstAttribute="centerY" secondItem="7AV-NC-w7F" secondAttribute="centerY" id="UPf-OR-Auv"/>
+                            <constraint firstItem="2HL-34-9sf" firstAttribute="centerX" secondItem="7AV-NC-w7F" secondAttribute="centerX" id="UXN-r8-KTP"/>
+                            <constraint firstItem="2SU-uF-v1F" firstAttribute="top" secondItem="2HL-34-9sf" secondAttribute="bottom" constant="50" id="YdS-Ei-wNk"/>
+                            <constraint firstItem="2SU-uF-v1F" firstAttribute="centerX" secondItem="7AV-NC-w7F" secondAttribute="centerX" id="iNU-iD-0bR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="W6w-uG-4fa"/>
+                    <connections>
+                        <outlet property="secondStepper" destination="2SU-uF-v1F" id="BLY-8C-Luu"/>
+                        <outlet property="secondStockLabel" destination="2HL-34-9sf" id="amA-FS-4Md"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gI-Gw-RFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966.66666666666674" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
